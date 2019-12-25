@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "auth": [
+        "projects/auth/src/public-api.ts"
+      ],
+      "auth/*": [
+        "dist/auth/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

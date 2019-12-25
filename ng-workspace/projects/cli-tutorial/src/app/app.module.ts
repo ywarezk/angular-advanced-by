@@ -2,19 +2,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { AutocompleteComponent } from './autocomplete/autocomplete.component';
-import { HttpClientModule } from '@angular/common/http';
-import { TestingStaticComponent } from './testing-static/testing-static.component';
+import {AuthModule} from 'auth';
+import { StyleExampleComponent } from './style-example/style-example.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AutocompleteComponent,
-    TestingStaticComponent
+    StyleExampleComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

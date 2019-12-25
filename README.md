@@ -5,6 +5,10 @@
 - RXJS: https://www.youtube.com/watch?v=rLPW1VowY1E
 - @angular/cli - https://www.youtube.com/watch?v=Ob7KZnZFZRk
 - component communication
+- redux - https://www.youtube.com/watch?v=h_VEq8yBTpg
+- redux ex - https://www.youtube.com/watch?v=G6vd7gTNhQs
+- DI - https://www.youtube.com/watch?v=CQIAjrfLnQQ
+- Change Detection - https://www.youtube.com/watch?v=9nGjgZSVptk
 
 ### EX RXJS operators
 
