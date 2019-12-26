@@ -6,13 +6,15 @@ import { Child1Component } from './child1/child1.component';
   template: `
     <app-child1 [message]="myHelloObj" #child1></app-child1>
     <app-child2>
+      <i class="stam" ></i>
       <div>
         <h1>hello from parent</h1>
         <p>
           {{title}}
         </p>  
-        <app-child2></app-child2>
+        <app-child1 [message]="myHelloObj"></app-child1>
       </div>
+      <i class="stam1" ></i>
     </app-child2>
   `,
   styleUrls: ['./app.component.scss']

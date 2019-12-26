@@ -1,5 +1,6 @@
 import { Component, OnInit, ContentChild } from '@angular/core';
 import { MessageService } from '../message.service';
+import { Child1Component } from '../child1/child1.component';
 
 @Component({
   selector: 'app-child2',
@@ -15,12 +16,15 @@ import { MessageService } from '../message.service';
     <ng-content>
 
     </ng-content>
+
+    
+
   `,
   styleUrls: ['./child2.component.scss']
 })
 export class Child2Component implements OnInit {
-  @ContentChild(Child2Component, {static: true})
-  instnceOfChild2InNgContent : Child2Component;
+  @ContentChild(Child1Component, {static: true})
+  instnceOfChild2InNgContent : Child1Component;
 
   constructor(public msgService : MessageService) { }
 

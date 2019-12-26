@@ -1,5 +1,15 @@
 ## Angular Advanced
 
+
+### Redux
+
+- publish subscribe
+- redux is kind of publish subscribe
+- store holds the data
+- you subscribe to part of the data that intrests you
+- you send an action to change the data
+
+
 ### Video Lectures
 
 - RXJS: https://www.youtube.com/watch?v=rLPW1VowY1E

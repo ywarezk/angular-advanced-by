@@ -399,6 +399,254 @@
           }
         }
       }
-    }},
-  "defaultProject": "rxjs-tutorial"
+    },
+    "cd-tutorial": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/cd-tutorial",
+      "sourceRoot": "projects/cd-tutorial/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/cd-tutorial",
+            "index": "projects/cd-tutorial/src/index.html",
+            "main": "projects/cd-tutorial/src/main.ts",
+            "polyfills": "projects/cd-tutorial/src/polyfills.ts",
+            "tsConfig": "projects/cd-tutorial/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/cd-tutorial/src/favicon.ico",
+              "projects/cd-tutorial/src/assets"
+            ],
+            "styles": [
+              "projects/cd-tutorial/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/cd-tutorial/src/environments/environment.ts",
+                  "with": "projects/cd-tutorial/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "cd-tutorial:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "cd-tutorial:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "cd-tutorial:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/cd-tutorial/src/test.ts",
+            "polyfills": "projects/cd-tutorial/src/polyfills.ts",
+            "tsConfig": "projects/cd-tutorial/tsconfig.spec.json",
+            "karmaConfig": "projects/cd-tutorial/karma.conf.js",
+            "assets": [
+              "projects/cd-tutorial/src/favicon.ico",
+              "projects/cd-tutorial/src/assets"
+            ],
+            "styles": [
+              "projects/cd-tutorial/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/cd-tutorial/tsconfig.app.json",
+              "projects/cd-tutorial/tsconfig.spec.json",
+              "projects/cd-tutorial/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/cd-tutorial/e2e/protractor.conf.js",
+            "devServerTarget": "cd-tutorial:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "cd-tutorial:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "redux-tutorial": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/redux-tutorial",
+      "sourceRoot": "projects/redux-tutorial/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/redux-tutorial",
+            "index": "projects/redux-tutorial/src/index.html",
+            "main": "projects/redux-tutorial/src/main.ts",
+            "polyfills": "projects/redux-tutorial/src/polyfills.ts",
+            "tsConfig": "projects/redux-tutorial/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/redux-tutorial/src/favicon.ico",
+              "projects/redux-tutorial/src/assets"
+            ],
+            "styles": [
+              "projects/redux-tutorial/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/redux-tutorial/src/environments/environment.ts",
+                  "with": "projects/redux-tutorial/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "redux-tutorial:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "redux-tutorial:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "redux-tutorial:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/redux-tutorial/src/test.ts",
+            "polyfills": "projects/redux-tutorial/src/polyfills.ts",
+            "tsConfig": "projects/redux-tutorial/tsconfig.spec.json",
+            "karmaConfig": "projects/redux-tutorial/karma.conf.js",
+            "assets": [
+              "projects/redux-tutorial/src/favicon.ico",
+              "projects/redux-tutorial/src/assets"
+            ],
+            "styles": [
+              "projects/redux-tutorial/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/redux-tutorial/tsconfig.app.json",
+              "projects/redux-tutorial/tsconfig.spec.json",
+              "projects/redux-tutorial/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/redux-tutorial/e2e/protractor.conf.js",
+            "devServerTarget": "redux-tutorial:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "redux-tutorial:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "rxjs-tutorial",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
