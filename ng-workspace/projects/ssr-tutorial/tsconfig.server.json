@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "outDir": "../../out-tsc/app-server",
+    "module": "commonjs"
+  },
+  "files": [
+    "src/projects/ssr-tutorial/src.ts"
+  ],
+  "angularCompilerOptions": {
+    "entryModule": "./src/projects/ssr-tutorial/src/projects/ssr-tutorial/src#AppServerModule"
+  }
+}
