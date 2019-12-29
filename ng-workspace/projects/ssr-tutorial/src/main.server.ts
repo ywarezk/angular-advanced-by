@@ -6,4 +6,4 @@ if (environment.production) {
   enableProdMode();
 }
 
-export { AppServerModule } from './app/projects/ssr-tutorial/src';
+export { AppServerModule } from './app/app.server.module';

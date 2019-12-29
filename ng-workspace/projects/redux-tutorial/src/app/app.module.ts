@@ -12,6 +12,9 @@ import { environment } from '../environments/environment';
 import { TodoModule } from '../todo/todo.module';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
+import { HttpClientModule } from '@angular/common/http';
+import { EntityDataModule, DefaultDataServiceConfig } from '@ngrx/data';
+import { entityConfig } from './entity-metadata';
 
 
 @NgModule({
@@ -32,9 +35,15 @@ import { AppEffects } from './app.effects';
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     TodoModule,
-    EffectsModule.forRoot([AppEffects])
+    EffectsModule.forRoot([AppEffects]),
+    HttpClientModule,
+    EntityDataModule.forRoot(entityConfig)
   ],
-  providers: [],
+  providers: [
+    {provide: DefaultDataServiceConfig , useValue: {
+      root: 'https://nztodo.herokuapp.com/api/'
+    }}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

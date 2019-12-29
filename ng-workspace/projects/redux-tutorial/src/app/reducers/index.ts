@@ -7,13 +7,16 @@ import {
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
 import {State as HelloState, reducer as helloReducer} from './hello.reducer';
+import {reducer as userReducer, State as UserState} from './user.reducer';
 
 export interface State {
-  hello : HelloState
+  hello : HelloState;
+  user : UserState;
 }
 
 export const reducers: ActionReducerMap<State> = {
-  hello: helloReducer
+  hello: helloReducer,
+  user : userReducer
 };
 
 
