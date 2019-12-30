@@ -24,6 +24,12 @@
       ],
       "auth/*": [
         "dist/auth/*"
+      ],
+      "shaam-forms": [
+        "projects/shaam-forms/src/public-api.ts"
+      ],
+      "shaam-forms/*": [
+        "dist/shaam-forms/*"
       ]
     }
   },

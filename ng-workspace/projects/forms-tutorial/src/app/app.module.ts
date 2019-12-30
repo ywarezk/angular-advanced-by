@@ -8,6 +8,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RegisterReactiveComponent } from './register-reactive/register-reactive.component';
 import { PasswordRepeatDirective } from './password-repeat.directive';
 import { AddressComponent } from './address/address.component';
+import {ShaamFormsModule} from 'shaam-forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AddressNewComponent } from './address-new/address-new.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +19,15 @@ import { AddressComponent } from './address/address.component';
     LoginReactiveComponent,
     RegisterReactiveComponent,
     PasswordRepeatDirective,
-    AddressComponent
+    AddressComponent,
+    AddressNewComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    ShaamFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

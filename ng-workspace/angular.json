@@ -1161,6 +1161,397 @@
           }
         }
       }
+    },
+    "no-ssr": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/no-ssr",
+      "sourceRoot": "projects/no-ssr/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/no-ssr",
+            "index": "projects/no-ssr/src/index.html",
+            "main": "projects/no-ssr/src/main.ts",
+            "polyfills": "projects/no-ssr/src/polyfills.ts",
+            "tsConfig": "projects/no-ssr/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/no-ssr/src/favicon.ico",
+              "projects/no-ssr/src/assets"
+            ],
+            "styles": [
+              "projects/no-ssr/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/no-ssr/src/environments/environment.ts",
+                  "with": "projects/no-ssr/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "no-ssr:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "no-ssr:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "no-ssr:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/no-ssr/src/test.ts",
+            "polyfills": "projects/no-ssr/src/polyfills.ts",
+            "tsConfig": "projects/no-ssr/tsconfig.spec.json",
+            "karmaConfig": "projects/no-ssr/karma.conf.js",
+            "assets": [
+              "projects/no-ssr/src/favicon.ico",
+              "projects/no-ssr/src/assets"
+            ],
+            "styles": [
+              "projects/no-ssr/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/no-ssr/tsconfig.app.json",
+              "projects/no-ssr/tsconfig.spec.json",
+              "projects/no-ssr/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/no-ssr/e2e/protractor.conf.js",
+            "devServerTarget": "no-ssr:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "no-ssr:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "shaam-forms": {
+      "projectType": "library",
+      "root": "projects/shaam-forms",
+      "sourceRoot": "projects/shaam-forms/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/shaam-forms/tsconfig.lib.json",
+            "project": "projects/shaam-forms/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/shaam-forms/src/test.ts",
+            "tsConfig": "projects/shaam-forms/tsconfig.spec.json",
+            "karmaConfig": "projects/shaam-forms/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/shaam-forms/tsconfig.lib.json",
+              "projects/shaam-forms/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "routing-tutorial": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/routing-tutorial",
+      "sourceRoot": "projects/routing-tutorial/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/routing-tutorial",
+            "index": "projects/routing-tutorial/src/index.html",
+            "main": "projects/routing-tutorial/src/main.ts",
+            "polyfills": "projects/routing-tutorial/src/polyfills.ts",
+            "tsConfig": "projects/routing-tutorial/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/routing-tutorial/src/favicon.ico",
+              "projects/routing-tutorial/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/routing-tutorial/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/routing-tutorial/src/environments/environment.ts",
+                  "with": "projects/routing-tutorial/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "routing-tutorial:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "routing-tutorial:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "routing-tutorial:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/routing-tutorial/src/test.ts",
+            "polyfills": "projects/routing-tutorial/src/polyfills.ts",
+            "tsConfig": "projects/routing-tutorial/tsconfig.spec.json",
+            "karmaConfig": "projects/routing-tutorial/karma.conf.js",
+            "assets": [
+              "projects/routing-tutorial/src/favicon.ico",
+              "projects/routing-tutorial/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/routing-tutorial/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/routing-tutorial/tsconfig.app.json",
+              "projects/routing-tutorial/tsconfig.spec.json",
+              "projects/routing-tutorial/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/routing-tutorial/e2e/protractor.conf.js",
+            "devServerTarget": "routing-tutorial:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "routing-tutorial:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "testing-tutorial": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/testing-tutorial",
+      "sourceRoot": "projects/testing-tutorial/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/testing-tutorial",
+            "index": "projects/testing-tutorial/src/index.html",
+            "main": "projects/testing-tutorial/src/main.ts",
+            "polyfills": "projects/testing-tutorial/src/polyfills.ts",
+            "tsConfig": "projects/testing-tutorial/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/testing-tutorial/src/favicon.ico",
+              "projects/testing-tutorial/src/assets"
+            ],
+            "styles": [
+              "projects/testing-tutorial/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/testing-tutorial/src/environments/environment.ts",
+                  "with": "projects/testing-tutorial/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "testing-tutorial:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "testing-tutorial:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "testing-tutorial:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/testing-tutorial/src/test.ts",
+            "polyfills": "projects/testing-tutorial/src/polyfills.ts",
+            "tsConfig": "projects/testing-tutorial/tsconfig.spec.json",
+            "karmaConfig": "projects/testing-tutorial/karma.conf.js",
+            "assets": [
+              "projects/testing-tutorial/src/favicon.ico",
+              "projects/testing-tutorial/src/assets"
+            ],
+            "styles": [
+              "projects/testing-tutorial/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/testing-tutorial/tsconfig.app.json",
+              "projects/testing-tutorial/tsconfig.spec.json",
+              "projects/testing-tutorial/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/testing-tutorial/e2e/protractor.conf.js",
+            "devServerTarget": "testing-tutorial:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "testing-tutorial:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "rxjs-tutorial",
